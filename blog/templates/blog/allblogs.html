@@ -50,15 +50,17 @@
         <h2>Latest Posts</h2>
         <hr/>
       </div>
+
       {% for blog in blogs.all%}
       <div class="container">
         <h2>{{blog.title}}</h2>
         <p>{{ blog.date }}</p>
         <br />
-        <body>{{ blog.body }}</body>
-        <img class="card-img-top" src="{{ blog.image.url }}" />
+        <body>{{ blog.summary }}</body>
+        <img class="card-img-top" src="{{ blog.image.url}}" />
       </div>
       {% endfor %}
+
     </main>
 
     <footer class="text-muted">
