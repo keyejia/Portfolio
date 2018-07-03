@@ -1,6 +1,5 @@
 chardet==2.3.0
 Django==2.0.2
-language-selector
 Pillow==5.1.0
 psycopg2==2.7.5
 pycurl==7.43.0
