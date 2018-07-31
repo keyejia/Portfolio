@@ -11,6 +11,11 @@ https://github.com/neutronX/django-markdownx
 
 Added - Markdown display with html using python markdown2. 
 
+Thanks to trentm
+
+https://github.com/trentm/python-markdown2
+
+
 
 ## Application URL: http://kellenjia.com
 
