@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Projects.apps.ProjectsConfig',
     'blog.apps.BlogConfig',
+    'markdownx',
 ]
 
 MIDDLEWARE = [
@@ -133,7 +135,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
- try:
-     from .local_settings import *
- except ImortError:
-     pass
+try:
+    from .local_settings import *
+except ImortError:
+    pass

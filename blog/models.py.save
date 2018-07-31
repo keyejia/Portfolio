@@ -1,0 +1,22 @@
+from markdown2 import Markdown
+from django.db import models
+from markdownx.models import MarkdownxField
+
+class blog(models.Model):
+	title = models.CharField(max_length=200)
+	date = models.DateField()
+	image = models.ImageField(upload_to='images/')
+	body = MarkdownxField()
+
+	def __str__(self):
+		return self.title
+
+	def summary(self):
+		markdown = Markdown()
+                return (markdown.convert(self.body))
+
+ self.body[:300]
+
+	def formatted_markdown(self):
+		markdown = Markdown()
+		return (markdown.convert(self.body))

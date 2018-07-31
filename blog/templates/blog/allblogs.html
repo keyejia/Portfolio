@@ -59,12 +59,11 @@
       </div>
 
       {% for blog in blogs.all%}
-      <div class="container pt-5">
+      <div class="container pt-5 py-3">
         <h2><a href="{% url 'detail' blog.id %}">{{blog.title}}</a></h2>
         <p>{{ blog.date }}</p>
         <br />
         <body style = "font-size: 18px ;">{{ blog.summary }}</body>
-        <img class="card-img-top" src="{{ blog.image.url}}" />
       </div>
       {% endfor %}
 

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+{% load staticfiles %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>Kellen Jia's portfolio</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <style>
+      .card-img-top img {
+          object-fit: none; /* Do not scale the image */
+          object-position: center; /* Center the image within the element */
+          width: 100%;
+          max-height: 150px;
+          margin-bottom: 1rem;
+        }
+        .container-fluid {
+          padding-left: 100px;
+          padding-right: 100px;
+        }
+    </style>
+  </head>
+
+  <body>
+
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="{% url 'home' %}">Kellen Jia</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto" >
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.linkedin.com/in/kellen-jia/">LinkedIn</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% static 'resume.pdf' %}">Resume</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/keyejia">Github</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'allblogs' %}">Blog</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main role="main">
+
+      <section class="jumbotron text-center" >
+        <div class="container">
+          <h1 class="jumbotron-heading">Hi, I am Kellen</h1>
+          <p class="lead text-muted">Hey, my name is Kellen Jia and I love to make Web Applications. </p>
+          
+          <p>
+            <a href="mailto:keyejia@gmail.com" class="btn btn-primary my-2">Email Me</a>
+          </p>
+          <img src = "{% static 'bruce.png' %}" class="img-rounded img-fluid" alt="Cinque Terre">
+        </div>
+      </section>
+
+      <div class="album py-1" style ="background-color: #cccccc ">
+        <h2 class = "text-center py-3">Projects</h2>
+        <div class="container">
+
+          <div class="row">
+	   
+            {% for project in Projects.all %}
+            <div class="col-lg-4 py-2">
+              <div class="card">
+             	   <img class="card-img-top img-thumbnail img-fluid" src="{{ project.image.url }}" >
+                <div class="card-body">
+                  <h5 class="card-title">{{project.title}}</h5>
+                  <p class="card-text">{{project.summary}}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Language: {{project.langAndFram}}</li>
+                </ul>
+                <div class="card-body">
+                  <a href="{{project.appURL}}" class="card-link">Application link</a>
+                  <a href="{{project.SourceURL}}" class="card-link float-right">Source code</a>
+                </div>
+              </div>
+            </div>
+
+            {% endfor %}
+
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <footer class="text-muted">
+      <div class="container text-center pt-3">
+        <p class="float-right">
+          <a href="#">Back to top</a>
+        </p>
+        <p>© Kellen Jia {% now "Y" %}</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  </body>
+</html>
