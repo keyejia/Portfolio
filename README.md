@@ -4,9 +4,13 @@ Also a blog to keep track of my learning progress.
 
 ## Blog
 Added - Markdown format edit preview inside admin using django-markdownx
+
 Thanks to neutronX
+
 https://github.com/neutronX/django-markdownx
+
 Added - Markdown display with html using python markdown2. 
+
 
 ## Application URL: http://kellenjia.com
 
