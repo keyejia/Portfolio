@@ -2,6 +2,14 @@
 Built a portfolio website to show case all more projects. 
 Also a blog to keep track of my learning progress. 
 
+## Application URL: http://kellenjia.com
+
+## Full Stack Used
+- Language:  Python, JavaScript
+- Framework: Django, bootstrap
+- Database: PostgresSQL
+- Host: DigitalOcean
+
 ## Blog
 Added - Markdown format edit preview inside admin using django-markdownx
 
@@ -15,13 +23,4 @@ Thanks to trentm
 
 https://github.com/trentm/python-markdown2
 
-
-
-## Application URL: http://kellenjia.com
-
-## Full Stack Used
-- Language:  Python, JavaScript
-- Framework: Django, bootstrap
-- Database: PostgresSQL
-- Host: DigitalOcean
 
